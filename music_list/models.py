@@ -19,9 +19,9 @@ class Song(models.Model):
       return self.title
 
 class Review(models.Model):
-    title = models.CharField(max_length=100)
     artist = models.ForeignKey(
-        Artist, on_delete=models.CASCADE, related_name='artist')
+        Artist, on_delete=models.CASCADE, related_name='reviews')
+    title = models.CharField(max_length=100)
     body = models.TextField()
     # author= models.CharField(max_length=100)
     created = models.DateTimeField(auto_now_add=True)
