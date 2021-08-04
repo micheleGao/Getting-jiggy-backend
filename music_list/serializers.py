@@ -21,15 +21,15 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     artist_id = serializers.PrimaryKeyRelatedField(
         queryset=Artist.objects.all(), source='artist')
 
-    artist_name = serializers.SlugRelatedField(
-        queryset=Artist.objects.all(), slug_field='name', source='artist')
+    # artist_name = serializers.SlugRelatedField(
+    #     queryset=Artist.objects.all(), slug_field='name', source='artist')
 
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Review
         fields = ('id', 'artist', 'title','artist_id',
-                  'body', 'created', 'artist_name', 'owner')
+                  'body', 'created', 'owner')
 
 class ArtistSerializer(serializers.HyperlinkedModelSerializer):
     songs= SongSerializer(
