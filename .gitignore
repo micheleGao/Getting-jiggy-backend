@@ -7,9 +7,6 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 media
-# By not including the Pipfile.lock, if you're collaborating on a team
-# other team members will have to run pipenv install to create their
-# own local file.
 Pipfile.lock
 
 # General MacOS files to ignore
