@@ -21,8 +21,7 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     artist_id = serializers.PrimaryKeyRelatedField(
         queryset=Artist.objects.all(), source='artist')
 
-    # artist_name = serializers.SlugRelatedField(
-    #     queryset=Artist.objects.all(), slug_field='name', source='artist')
+    
 
     owner = serializers.ReadOnlyField(source='owner.username')
 
